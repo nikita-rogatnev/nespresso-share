@@ -1,0 +1,27 @@
+/* ------------------------------------------ */
+/* FINAL BLOCK
+/* ------------------------------------------ */
+.final {
+    @include wrapper;
+
+    &__wrapper {
+        text-align: center;
+    }
+
+    &__heading {
+
+    }
+
+    &__subheading {
+
+    }
+
+    &__image {
+        max-width: 27rem;
+        margin: 0 auto;
+    }
+
+    @media (min-width: $large-up) {
+
+    }
+}

@@ -1,0 +1,24 @@
+/* ------------------------------------------ */
+/* MODAL BLOCK
+/* ------------------------------------------ */
+.modal {
+    @include wrapper;
+
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: red;
+    height: 100%;
+
+    &__heading {
+
+    }
+
+    &__subheading {
+
+    }
+
+    @media (min-width: $large-up) {
+
+    }
+}

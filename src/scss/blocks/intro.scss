@@ -1,0 +1,35 @@
+/* ------------------------------------------ */
+/* INTRO BLOCK
+/* ------------------------------------------ */
+.intro {
+    @include wrapper;
+
+    &__wrapper {
+        text-align: center;
+    }
+
+    &__heading {
+
+    }
+
+    &__subheading {
+
+    }
+
+    &__slider {
+        display: flex;
+    }
+
+    &__presents {
+        display: flex;
+
+        img {
+            width: 30rem;
+            height: auto;
+        }
+    }
+
+    @media (min-width: $large-up) {
+
+    }
+}

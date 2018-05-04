@@ -1,0 +1,86 @@
+// ------------------------------------------ //
+// VARIABLES
+// ------------------------------------------ //
+
+// FONT WEIGHTS
+$light-font-weight: 300;
+$regular-font-weight: 400;
+$bold-font-weight: 700;
+$extra-bold-font-weight: 900;
+
+// FONTS
+@font-face {
+    font-family: 'NespressoLucas';
+    font-weight: $extra-bold-font-weight;
+    font-style: normal;
+
+    src: url('../fonts/NespressoLucas-XtraBd.woff2') format('woff2'),
+    url('../fonts/NespressoLucas-XtraBd.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'NespressoLucas';
+    font-weight: $bold-font-weight;
+    font-style: normal;
+
+    src: url('../fonts/NespressoLucas-Bold.woff2') format('woff2'),
+    url('../fonts/NespressoLucas-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'NespressoLucas';
+    font-weight: $regular-font-weight;
+    font-style: normal;
+
+    src: url('../fonts/NespressoLucas-Regular.woff2') format('woff2'),
+    url('../fonts/NespressoLucas-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'NespressoLucas';
+    font-weight: $light-font-weight;
+    font-style: normal;
+
+    src: url('../fonts/NespressoLucas-Light.woff2') format('woff2'),
+    url('../fonts/NespressoLucas-Light.woff') format('woff');
+}
+
+// FONT SIZES
+$html-font-size: 62.5%; // 1rem = 10px
+
+$font-size--5: 0.8rem; // 8px
+$font-size--4: 1.0rem; // 10px
+$font-size--3: 1.2rem; // 12px
+$font-size--2: 1.4rem; // 14px
+$font-size--1: 1.6rem; // 16px
+$font-size-00: 1.8rem; // 18px
+$font-size-01: 2.0rem; // 20px
+$font-size-02: 2.5rem; // 25px
+$font-size-03: 3.5rem; // 35px
+$font-size-04: 4.5rem; // 45px
+$font-size-05: 5.5rem; // 55px
+$font-size-06: 6.5rem; // 65px
+
+$base-font-size: $font-size--1;
+$base-font-family: 'NespressoLucas', Arial, sans-serif;
+$secondary-font-family: $base-font-family;
+
+// COLORS
+$color-accent: rgba(237, 212, 182, 1);
+$color-accent-dark: $color-accent;
+$color-accent-light: $color-accent;
+$color-primary: rgba(0, 0, 0, 1);
+$color-primary-dark: rgba(59, 59, 59, 1);
+$color-primary-light: $color-primary;
+$color-secondary: rgba(221, 157, 74, 1);
+$color-secondary-dark: $color-secondary;
+$color-secondary-light: $color-secondary;
+$color-primary-text-dark: rgba(0, 0, 0, 1);
+$color-primary-text-light: rgba(255, 255, 255, 1);
+
+// TRANSITIONS
+$transition: 0.3s;
+
+// BREAKPOINTS
+$screen-large-min: 918px;
+$large-up: $screen-large-min;

@@ -1,0 +1,17 @@
+// ------------------------------------------ //
+// GENERAL
+// ------------------------------------------ //
+@import "./general/config.scss";
+@import "./general/mixins.scss";
+@import "./general/global.scss";
+
+// ------------------------------------------ //
+// PAGE BLOCKS
+// ------------------------------------------ //
+@import "./blocks/btn.scss";
+@import "./blocks/intro.scss";
+@import "./blocks/modal.scss";
+@import "./blocks/slider.scss";
+@import "./blocks/form.scss";
+@import "./blocks/final.scss";
+@import "./blocks/footer.scss";
