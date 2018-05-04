@@ -2,11 +2,7 @@
 /* FINAL BLOCK
 /* ------------------------------------------ */
 .final {
-    @include wrapper;
-
-    &__wrapper {
-        text-align: center;
-    }
+    text-align: center;
 
     &__heading {
 

@@ -7,18 +7,6 @@
     position: absolute;
     top: 0;
     width: 100%;
-    background: red;
+    background: $color-accent url("../img/bg_blur.png") no-repeat center center;
     height: 100%;
-
-    &__heading {
-
-    }
-
-    &__subheading {
-
-    }
-
-    @media (min-width: $large-up) {
-
-    }
 }

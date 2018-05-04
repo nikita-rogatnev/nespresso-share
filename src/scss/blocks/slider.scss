@@ -2,13 +2,57 @@
 /* SLIDER BLOCK
 /* ------------------------------------------ */
 .slider {
-    @include wrapper;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
 
-    &__heading {
-
+    &__slides {
+        position: relative;
+        left: 0;
+        top: 0;
+        list-style: none;
+        margin: 0;
+        display: flex;
+        padding: 0;
     }
 
-    @media (min-width: $large-up) {
-
+    &__slide {
+        min-width: calc(100% / 3);
+        padding: 5px;
     }
+}
+
+#buttons {
+    padding: 0 0 5px 0;
+    float: right;
+}
+
+#buttons a {
+    display: block;
+    width: 31px;
+    height: 32px;
+    text-indent: -999em;
+    float: left;
+    outline: 0;
+}
+
+a#prev {
+    background: url(arrow.gif) 0 -31px no-repeat;
+}
+
+a#prev:hover {
+    background: url(arrow.gif) 0 0 no-repeat;
+}
+
+a#next {
+    background: url(arrow.gif) -32px -31px no-repeat;
+}
+
+a#next:hover {
+    background: url(arrow.gif) -32px 0 no-repeat;
+}
+
+.clear {
+    clear: both
 }
