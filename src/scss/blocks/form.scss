@@ -2,5 +2,8 @@
 /* FORM BLOCK
 /* ------------------------------------------ */
 .form {
+    @include headings;
 
+    position: relative;
+    z-index: 3;
 }

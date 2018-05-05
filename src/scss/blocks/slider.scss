@@ -2,10 +2,14 @@
 /* SLIDER BLOCK
 /* ------------------------------------------ */
 .slider {
+    @include headings;
+
     overflow: hidden;
     position: relative;
     width: 100%;
     margin: 0 auto;
+    padding: 3rem 0;
+    z-index: 2;
 
     &__slides {
         position: relative;
@@ -18,41 +22,72 @@
     }
 
     &__slide {
-        min-width: calc(100% / 3);
-        padding: 5px;
+        min-width: 100%;
+        padding: 0 0.25rem;
     }
-}
 
-#buttons {
-    padding: 0 0 5px 0;
-    float: right;
-}
+    &__title {
+        font-weight: $bold-font-weight;
+        font-size: $font-size-01;
+    }
 
-#buttons a {
-    display: block;
-    width: 31px;
-    height: 32px;
-    text-indent: -999em;
-    float: left;
-    outline: 0;
-}
+    &__buttons {
+    }
 
-a#prev {
-    background: url(arrow.gif) 0 -31px no-repeat;
-}
+    &__button {
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 4rem;
 
-a#prev:hover {
-    background: url(arrow.gif) 0 0 no-repeat;
-}
+        &:last-child {
+            right: 0;
 
-a#next {
-    background: url(arrow.gif) -32px -31px no-repeat;
-}
+            img {
+                transform: rotate(180deg);
+            }
+        }
 
-a#next:hover {
-    background: url(arrow.gif) -32px 0 no-repeat;
-}
+        img {
+            width: 4rem;
+        }
+    }
 
-.clear {
-    clear: both
+    &__link {
+        display: none;
+        padding: 5rem 0 0;
+
+        a {
+            font-weight: $bold-font-weight;
+            font-size: $font-size-01;
+            color: $color-primary-text-dark;
+            border: 0.1rem solid $color-primary-text-dark;
+            border-radius: 0.5rem;
+            text-transform: uppercase;
+            padding: 1.5rem 2rem;
+        }
+    }
+
+    &.is-modal {
+        width: calc(100% / 3);
+
+        .slider__slide {
+            min-width: 100%;
+        }
+
+        .slider__link {
+            display: block;
+        }
+    }
+
+    @media (min-width: $large-up) {
+        padding: 6rem 0;
+
+        &__slide {
+            min-width: calc(100% / 3);
+            padding: 1.5rem;
+        }
+    }
 }

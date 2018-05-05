@@ -3,33 +3,14 @@
 /* ------------------------------------------ */
 .intro {
     @include wrapper;
+    @include headings;
 
-    &__wrapper {
-        text-align: center;
-    }
-
-    &__heading {
-
-    }
-
-    &__subheading {
-
-    }
-
-    &__slider {
-        display: flex;
-    }
+    background: $color-accent url("../img/bg.png") no-repeat center bottom;
+    background-size: contain;
 
     &__presents {
-        display: flex;
-
-        img {
-            width: 30rem;
-            height: auto;
-        }
-    }
-
-    @media (min-width: $large-up) {
-
+        max-width: 73rem;
+        margin: 0 auto;
+        padding: 2rem;
     }
 }

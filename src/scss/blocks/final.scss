@@ -2,22 +2,13 @@
 /* FINAL BLOCK
 /* ------------------------------------------ */
 .final {
-    text-align: center;
+    @include headings;
 
-    &__heading {
-
-    }
-
-    &__subheading {
-
-    }
+    position: relative;
+    z-index: 3;
 
     &__image {
         max-width: 27rem;
         margin: 0 auto;
-    }
-
-    @media (min-width: $large-up) {
-
     }
 }
