@@ -8,6 +8,7 @@
     width: 100%;
     margin: 0 auto;
     padding: 3rem 0;
+    z-index: 0;
 
     &__wrapper {
         overflow: hidden;
@@ -70,10 +71,12 @@
         }
     }
 
-    
-
     &.is-modal {
         z-index: 2;
+
+        .slider__slides {
+            //transform: translateX(calc(100% / 3));
+        }
 
         .slider__slide {
             min-width: 100%;
@@ -123,19 +126,39 @@
         }
 
         &.is-modal {
-            width: calc(100% / 3);
             transform: translateY(-12rem);
+
+            &:not(:first-child) {
+                .active {
+                    visibility: hidden;
+
+                    & + .active {
+                        visibility: visible;
+
+                        & + .active {
+                            visibility: hidden;
+                        }
+                    }
+                }
+            }
+
+            .owl-carousel {
+                .owl-stage {
+                    transition: none !important;
+                }
+            }
 
             .slider__title {
                 font-size: 4rem;
             }
 
             .slider__button {
-                left: -18rem;
+                z-index: 3;
+                left: 25rem;
 
                 &:nth-child(2) {
                     left: auto;
-                    right: -18rem;
+                    right: 25rem;
                 }
             }
         }
