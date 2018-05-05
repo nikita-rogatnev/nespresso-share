@@ -4,11 +4,17 @@
 .slider {
     @include headings;
 
-    overflow: hidden;
     position: relative;
     width: 100%;
     margin: 0 auto;
     padding: 3rem 0;
+
+    &__wrapper {
+        overflow: hidden;
+
+        width: 90%;
+        margin: 0 auto;
+    }
 
     &__slides {
         position: relative;
@@ -30,24 +36,17 @@
         font-size: $font-size-01;
     }
 
-    &__buttons {
-        z-index: 3332; //
-        position: absolute; //
-    }
-
     &__button {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        left: 0;
-        width: 4rem;
+        left: -1.5rem;
+        width: 2rem;
 
-        &:last-child {
-            right: 0;
-
-            img {
-                transform: rotate(180deg);
-            }
+        &:nth-child(2) {
+            right: -1.5rem;
+            left: auto;
+            transform: rotate(180deg) translateY(50%);
         }
 
         img {
@@ -76,6 +75,16 @@
 
         .slider__slide {
             min-width: 100%;
+            flex-direction: column-reverse;
+            display: flex;
+        }
+
+        .slider__title {
+            margin-bottom: 5rem;
+
+            font-size: 2.5rem;
+            line-height: 1.2;
+            font-weight: $light-font-weight;
         }
 
         .slider__link {
@@ -85,6 +94,10 @@
 
     @media (min-width: $large-up) {
         padding: 6rem 0;
+
+        &__wrapper {
+            width: 100%;
+        }
 
         &__slide {
             min-width: calc(100% / 3);
@@ -97,8 +110,32 @@
             }
         }
 
+        .slider__button {
+            left: -4rem;
+            width: 4rem;
+
+            &:nth-child(2) {
+                right: -4rem;
+                left: auto;
+            }
+        }
+
         &.is-modal {
             width: calc(100% / 3);
+            transform: translateY(-12rem);
+
+            .slider__title {
+                font-size: 4rem;
+            }
+
+            .slider__button {
+                left: -18rem;
+
+                &:nth-child(2) {
+                    left: auto;
+                    right: -18rem;
+                }
+            }
         }
     }
 }
