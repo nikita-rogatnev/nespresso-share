@@ -6,4 +6,76 @@
 
     position: relative;
     z-index: 3;
+
+    form {
+        max-width: 60rem;
+        margin: 0 auto;
+        padding-top: 6rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        display: flex;
+        flex-direction: column;
+        font-weight: $bold-font-weight;
+        font-size: 2.2rem;
+        line-height: 1;
+        position: relative;
+        margin-bottom: 2rem;
+        align-items: center;
+
+        span {
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+    }
+
+    input {
+        width: 100%;
+        max-width: 38rem;
+        height: 6.5rem;
+        box-sizing: border-box;
+        font-family: $base-font-family;
+        font-size: 4rem;
+        font-weight: $light-font-weight;
+        padding: 1.7rem 2rem;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+
+        margin-top: 7rem;
+    }
+
+    &__button {
+        border: 0;
+        box-shadow: none;
+        margin: 0 1.5rem;
+        background: transparent;
+    }
+
+    &__submit {
+        max-width: 8.5rem;
+        height: auto;
+    }
+
+    @media (min-width: $large-up) {
+        label {
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 2.5rem;
+
+            span {
+                width: 14rem;
+                padding-right: 3rem;
+                margin-bottom: 0;
+            }
+        }
+
+        form {
+            transform: translateX(-3rem);
+        }
+    }
 }

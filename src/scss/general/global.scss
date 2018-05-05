@@ -60,6 +60,10 @@ a {
     text-decoration: none;
 
     color: $color-accent;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .main {
@@ -68,4 +72,8 @@ a {
 
 .is-hidden {
     display: none !important;
+}
+
+.is-blur {
+    //filter: blur(0.5rem);
 }

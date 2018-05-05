@@ -7,8 +7,19 @@
     position: relative;
     z-index: 3;
 
+    &__subheading {
+        font-weight: $light-font-weight;
+        font-size: $font-size--1;
+        max-width: 56rem;
+        margin: 2rem auto 7rem;
+    }
+
     &__image {
         max-width: 27rem;
         margin: 0 auto;
+    }
+
+    @media (min-width: $large-up) {
+        font-size: 2.2rem;
     }
 }

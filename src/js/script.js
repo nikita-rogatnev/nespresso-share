@@ -3,27 +3,28 @@ $(document).ready(function () {
         e.preventDefault();
         $(".modal").removeClass('is-hidden');
         $(".slider").addClass('is-modal');
+        $(".intro").addClass('is-blur');
     });
 
     $(".modal__close").click(function (e) {
         e.preventDefault();
-        $(".modal").addClass('is-hidden');
+        $(".modal, .form, .final").addClass('is-hidden');
         $(".slider").removeClass('is-modal is-hidden');
-
+        $(".intro").removeClass('is-blur');
     });
 
     $(".slider__link a").click(function (e) {
         e.preventDefault();
-        $(".slider").addClass('is-hidden');
+        $(".slider").removeClass('is-modal');
         $(".form").removeClass('is-hidden');
     });
 
+    $(".form button").click(function (e) {
+        e.preventDefault();
+        $(".form").addClass('is-hidden');
+        $(".final").removeClass('is-hidden');
+    });
 
-
-
-    //rotation speed and timer
-    var speed = 5000;
-    var run = setInterval('rotate()', speed);
 
     //grab the width and calculate left value
     var item_width = $('.slider__slide').outerWidth();

@@ -9,7 +9,6 @@
     width: 100%;
     margin: 0 auto;
     padding: 3rem 0;
-    z-index: 2;
 
     &__slides {
         position: relative;
@@ -32,11 +31,12 @@
     }
 
     &__buttons {
+        z-index: 3332; //
+        position: absolute; //
     }
 
     &__button {
         position: absolute;
-        z-index: 3;
         top: 50%;
         transform: translateY(-50%);
         left: 0;
@@ -60,8 +60,9 @@
         padding: 5rem 0 0;
 
         a {
+            white-space: nowrap;
             font-weight: $bold-font-weight;
-            font-size: $font-size-01;
+            font-size: $font-size--1;
             color: $color-primary-text-dark;
             border: 0.1rem solid $color-primary-text-dark;
             border-radius: 0.5rem;
@@ -71,7 +72,7 @@
     }
 
     &.is-modal {
-        width: calc(100% / 3);
+        z-index: 2;
 
         .slider__slide {
             min-width: 100%;
@@ -88,6 +89,16 @@
         &__slide {
             min-width: calc(100% / 3);
             padding: 1.5rem;
+        }
+
+        &__link {
+            a {
+                font-size: $font-size-01;
+            }
+        }
+
+        &.is-modal {
+            width: calc(100% / 3);
         }
     }
 }

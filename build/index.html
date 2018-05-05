@@ -31,10 +31,10 @@
             <!-- SLIDER BLOCK -->
             <section class="slider">
                 <div id="buttons" class="slider__buttons">
-                    <a href="#" id="prev" class="slider__button">
+                    <a id="prev" class="slider__button">
                         <img src="img/arrow.png" width="52" alt="arrow">
                     </a>
-                    <a href="#" id="next" class="slider__button">
+                    <a id="next" class="slider__button">
                         <img src="img/arrow.png" width="52" alt="arrow">
                     </a>
                 </div>
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="slider__link">
-                    <a href="#">Учавствовать в конкурсе</a>
+                    <a href="#form">Учавствовать в конкурсе</a>
                 </div>
 
             </section>
@@ -103,11 +103,10 @@
     <section class="modal is-hidden">
         <div class="modal__wrapper">
 
-            <button class="modal__close">Закрыть</button>
-
+            <a class="modal__close">Закрыть</a>
 
             <!-- FORM BLOCK -->
-            <section class="form is-hidden">
+            <section class="form is-hidden" id="form">
                 <h1 class="form__heading">
                     Поделись в свой соцсети<br>и учавствуй в конкусе!
                 </h1>
@@ -118,26 +117,29 @@
                     </label>
                     <label>
                         <span>Телефон:</span>
-                        <input type="email" id="tel" name="tel" placeholder="Ваше телефон">
+                        <input type="email" id="tel" name="tel" placeholder="Ваш телефон">
                     </label>
                     <label>
                         <span>Email:</span>
                         <input type="email" id="email" name="email" placeholder="Ваш email">
                     </label>
 
-                    <button type="submit">
+                    <div class="form__buttons">
+                        <button type="submit" class="form__button">
+                            <img src="img/vk.png" class="form__submit" width="85" alt="vk">
+                        </button>
 
-                    </button>
+                        <button type="submit" class="form__button">
+                            <img src="img/fb.png" class="form__submit" width="85" alt="vk">
+                        </button>
+                    </div>
 
-                    <button type="submit">
-
-                    </button>
                 </form>
             </section>
             <!-- FORM BLOCK END -->
 
             <!-- FINAL BLOCK -->
-            <section class="final is-hidden">
+            <section class="final is-hidden" id="final">
                 <h1 class="final__heading">
                     Спасибо за участие!
                 </h1>
