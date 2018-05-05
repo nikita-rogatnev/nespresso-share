@@ -26,59 +26,38 @@ $(document).ready(function () {
     });
 
 
-    //grab the width and calculate left value
-    var item_width = $('.slider__slide').outerWidth();
-    var left_value = item_width * (-1);
-
-    //move the last item before first item, just in case user click prev button
-    $('.slider__slides .slider__slide:first').before($('.slider__slides .slider__slide:last'));
-
-    //set the default item to the correct position
-    $('.slider__slides').css({'left': left_value});
-
-
-    //if user clicked on prev button
-    $('#prev').click(function () {
-
-        //get the right position
-        var left_indent = parseInt($('.slider__slides').css('left')) + item_width;
-
-        //slide the item
-        $('.slider__slides').animate({'left': left_indent}, 200, function () {
-
-            //move the last item and put it as first item
-            $('.slider__slides .slider__slide:first').before($('.slider__slides .slider__slide:last'));
-
-            //set the default item to correct position
-            $('.slider__slides').css({'left': left_value});
-
-        });
-
-        //cancel the link behavior
-        return false;
+    $('.owl-carousel').children().each(function (index) {
+        $(this).attr('data-position', index);
     });
 
-
-    //if user clicked on next button
-    $('#next').click(function () {
-
-        //get the right position
-        var left_indent = parseInt($('.slider__slides').css('left')) - item_width;
-
-        //slide the item
-        $('.slider__slides').animate({'left': left_indent}, 200, function () {
-
-            //move the first item and put it as last item
-            $('.slider__slides .slider__slide:last').after($('.slider__slides .slider__slide:first'));
-
-            //set the default item to correct position
-            $('.slider__slides').css({'left': left_value});
-
+    if ($(window).width() < 1160) {
+        $('.owl-carousel').owlCarousel({
+            center: true,
+            loop: true,
+            items: 1,
         });
+    }
 
-        //cancel the link behavior
-        return false;
+    else {
+        $('.owl-carousel').owlCarousel({
+            center: true,
+            loop: true,
+            items: 3,
+        });
+    }
 
+    // Go to the next item
+    $('.owl-next').click(function () {
+        $('.owl-carousel').trigger('next.owl.carousel');
+    });
+
+    // Go to the previous item
+    $('.owl-prev').click(function () {
+        $('.owl-carousel').trigger('prev.owl.carousel', [300]);
+    });
+
+    $(document).on('click', '.owl-item>div', function () {
+        $('.owl-carousel').trigger('to.owl.carousel', $(this).data('position'));
     });
 
 });

@@ -57,7 +57,6 @@ let images = [
 
 // Cписок обрабатываемых файлов в указанной последовательности
 let jsList = [
-    dirs.source + '/js/jquery-3.3.1.js',
     dirs.source + '/js/script.js'
 ];
 
