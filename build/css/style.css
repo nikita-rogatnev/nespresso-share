@@ -467,15 +467,15 @@ a {
     .footer__info span {
       color: #3b3b3b;
       font-size: 1.2rem; }
-    @media (min-width: 116rem) {
+    @media (min-width: 1160px) {
       .intro__wrapper {
-        width: 116rem; }
+        width: 1160px; }
       .intro__heading {
         font-size: 5rem; }
       .intro__subheading {
         font-size: 2rem; }
       .modal__wrapper {
-        width: 116rem; }
+        width: 1160px; }
       .modal__heading {
         font-size: 5rem; }
       .modal__subheading {
@@ -536,7 +536,7 @@ a {
     .final {
       font-size: 2.2rem; }
       .footer__top .footer__wrapper {
-        width: 116rem; }
+        width: 1160px; }
     .footer__top .footer__column {
       width: calc(100% / 3); }
     .footer__top .footer__wrapper {
