@@ -24,7 +24,7 @@
         border-bottom: 0.1rem solid $color-primary-text-dark;
 
         &:hover {
-            border: 0;
+            border-bottom: 0.1rem solid transparent;
         }
     }
 
