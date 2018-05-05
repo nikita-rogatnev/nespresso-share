@@ -154,11 +154,16 @@
 
             .slider__button {
                 z-index: 3;
-                left: 25rem;
-
+                left: 0;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 38.5rem;
+                
                 &:nth-child(2) {
                     left: auto;
-                    right: 25rem;
+                    right: 0;
                 }
             }
         }
