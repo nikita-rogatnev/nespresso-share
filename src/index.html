@@ -16,9 +16,6 @@
     <meta property="fb:app_id" content="614466488902185"/>
     <meta property="og:url" content="http://drib.tech/fbsharetest/quiz.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Are you the real Star Trek geek?">
-    <meta property="og:description" content="Prove your Star Trek geekhood! Are you wise like Yoda or Jar Jar Binks?">
-    <meta property="og:image" content="http://drib.tech/fbsharetest/quiz_landing.jpg">
     <!-- OG END -->
 
 </head>
@@ -128,12 +125,24 @@
                     </label>
 
                     <div class="form__buttons">
-                        <button type="submit" class="form__button social_share" data-type="vk" onclick="return submitAndShare();">
+                        <button type="submit" class="form__button social_share" data-type="vk"
+                                onclick="return submitAndShare();">
                             <img src="img/vk.png" class="form__submit" width="85" alt="vk">
                         </button>
 
-                        <button type="submit" class="form__button social_share" data-type="fb" data-fb_api_id="1234567890" onclick="return submitAndShare();">
+                        <button type="submit" class="form__button social_share" data-type="fb"
+                                data-fb_api_id="1234567890" onclick="return submitAndShare();">
                             <img src="img/fb.png" class="form__submit" width="85" alt="fb">
+                        </button>
+
+                        <button class="social_share" utm_source="messengers" data-utm_medium="telegram"
+                                data-type="telegram">Telegram
+                        </button>
+                        <button class="social_share" utm_source="messengers" data-utm_medium="whatsapp"
+                                data-type="whatsapp">Whatsapp
+                        </button>
+                        <button class="social_share" utm_source="messengers" data-utm_medium="viber" data-type="viber">
+                            Viber
                         </button>
                     </div>
 

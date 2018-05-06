@@ -57,6 +57,7 @@ let images = [
 
 // Cписок обрабатываемых файлов в указанной последовательности
 let jsList = [
+    dirs.source + '/js/jsshare.js',
     dirs.source + '/js/script.js'
 ];
 
