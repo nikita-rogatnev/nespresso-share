@@ -36,7 +36,7 @@ JSShare = {
      * @param element Object - DOM element
      * @param options Object - optional
      */
-    go: function(element, options) {
+    go: function (element, options) {
         var self = JSShare,
             withoutPopup = [
                 'unknown',
@@ -48,17 +48,17 @@ JSShare = {
             tryLocation = true, // should we try to redirect user to share link
             link,
             defaultOptions = {
-                type:        'vk',           // share type
-                fb_api_id:   '',             // Facebook API id
-                url:         '',             // url to share
-                title:       document.title, // title to share
-                image:       '',             // image to share
-                text:        '',             // text to share
-                utm_source:  '',
-                utm_medium:  '',
-                utm_campaign:'',
+                type: 'vk',           // share type
+                fb_api_id: '',             // Facebook API id
+                url: '',             // url to share
+                title: document.title, // title to share
+                image: '',             // image to share
+                text: '',             // text to share
+                utm_source: '',
+                utm_medium: '',
+                utm_campaign: '',
                 popup_width: 626,
-                popup_height:436
+                popup_height: 436
             };
 
         options = self._extend(
@@ -90,61 +90,61 @@ JSShare = {
         }
     },
 
-    unknown: function(options) {
+    unknown: function (options) {
         return encodeURIComponent(JSShare._getURL(options));
     },
 
     // vk.com - ВКонтакте
-    vk: function(options) {
+    vk: function (options) {
         return 'http://vkontakte.ru/share.php?'
-            + 'url='          + encodeURIComponent(JSShare._getURL(options))
-            + '&title='       + encodeURIComponent(options.title)
+            + 'url=' + encodeURIComponent(JSShare._getURL(options))
+            + '&title=' + encodeURIComponent(options.title)
             + '&description=' + encodeURIComponent(options.text)
-            + '&image='       + encodeURIComponent(options.image)
+            + '&image=' + encodeURIComponent(options.image)
             + '&noparse=true';
     },
 
     // ok.ru - Одноклассники
-    ok: function(options) {
+    ok: function (options) {
         return 'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1'
             + '&st.comments=' + encodeURIComponent(options.text)
-            + '&st._surl='    + encodeURIComponent(JSShare._getURL(options));
+            + '&st._surl=' + encodeURIComponent(JSShare._getURL(options));
     },
 
     // Facebook
-    fb: function(options) {
+    fb: function (options) {
         var url = JSShare._getURL(options);
         return 'https://www.facebook.com/dialog/share?'
-            +'app_id=' + options.fb_api_id
-            +'&display=popup'
-            +'&href='         + encodeURIComponent(url)
-            +'&redirect_uri=' + encodeURIComponent(url);
+            + 'app_id=' + options.fb_api_id
+            + '&display=popup'
+            + '&href=' + encodeURIComponent(url)
+            + '&redirect_uri=' + encodeURIComponent(url);
     },
 
     // Livejournal
-    lj: function(options) {
+    lj: function (options) {
         return 'http://livejournal.com/update.bml?'
-            + 'subject='      + encodeURIComponent(options.title)
-            + '&event='       + encodeURIComponent(options.text + '<br/><a href="' + JSShare._getURL(options) + '">' + options.title + '</a>')
+            + 'subject=' + encodeURIComponent(options.title)
+            + '&event=' + encodeURIComponent(options.text + '<br/><a href="' + JSShare._getURL(options) + '">' + options.title + '</a>')
             + '&transform=1';
     },
 
     // Twitter
-    tw: function(options) {
+    tw: function (options) {
         var url = JSShare._getURL(options);
         return 'http://twitter.com/share?'
-            + 'text='         + encodeURIComponent(options.title)
-            + '&url='         + encodeURIComponent(url)
-            + '&counturl='    + encodeURIComponent(url);
+            + 'text=' + encodeURIComponent(options.title)
+            + '&url=' + encodeURIComponent(url)
+            + '&counturl=' + encodeURIComponent(url);
     },
 
     // Mail.ru
-    mailru: function(options) {
+    mailru: function (options) {
         return 'http://connect.mail.ru/share?'
-            + 'url='          + encodeURIComponent(JSShare._getURL(options))
-            + '&title='       + encodeURIComponent(options.title)
+            + 'url=' + encodeURIComponent(JSShare._getURL(options))
+            + '&title=' + encodeURIComponent(options.title)
             + '&description=' + encodeURIComponent(options.text)
-            + '&imageurl='    + encodeURIComponent(options.image);
+            + '&imageurl=' + encodeURIComponent(options.image);
     },
 
 
@@ -166,14 +166,14 @@ JSShare = {
         return 'viber://forward?text=' + encodeURIComponent(JSShare._getURL(options));
     },
 
-    email: function(options) {
+    email: function (options) {
         return 'mailto:?'
             + 'subject=' + encodeURIComponent(options.title)
-            + '&body='   + encodeURIComponent(JSShare._getURL(options))
+            + '&body=' + encodeURIComponent(JSShare._getURL(options))
             + encodeURIComponent("\n" + options.text);
     },
 
-    _getURL: function(options) {
+    _getURL: function (options) {
         if (options.url == '') {
             options.url = location.href;
         }
@@ -195,14 +195,14 @@ JSShare = {
     },
 
     // Open popup window for sharing
-    _popup: function(url, _options) {
-        return window.open(url,'','toolbar=0,status=0,scrollbars=1,width=' + _options.popup_width + ',height=' + _options.popup_height);
+    _popup: function (url, _options) {
+        return window.open(url, '', 'toolbar=0,status=0,scrollbars=1,width=' + _options.popup_width + ',height=' + _options.popup_height);
     },
 
     /**
      * Object Extending Functionality
      */
-    _extend: function(out) {
+    _extend: function (out) {
         out = out || {};
         for (var i = 1; i < arguments.length; i++) {
             if (!arguments[i])
@@ -219,7 +219,7 @@ JSShare = {
     /**
      * Get data-attributes
      */
-    _getData: function(el, defaultOptions) {
+    _getData: function (el, defaultOptions) {
         var data = {};
         for (var key in defaultOptions) {
             var value = el.getAttribute('data-' + key);
@@ -284,9 +284,11 @@ $(document).ready(function () {
 
     $(".form button").click(function (e) {
         e.preventDefault();
-        $(".form").addClass('is-hidden');
-        $(".final").removeClass('is-hidden');
 
+        if ($('#email').val().length > 0) {
+            $(".form").addClass('is-hidden');
+            $(".final").removeClass('is-hidden');
+        }
     });
 
     $(".modal__close").click(function (e) {
@@ -300,8 +302,8 @@ $(document).ready(function () {
 function submitAndShare() {
     // get the selected answer
     var userName = $('#name').val();
-    var slideId = window.location.pathname.replace(".html","");
-    slideId = slideId.replace("/","");
+    var slideId = window.location.pathname.replace(".html", "");
+    slideId = slideId.replace("/", "");
     console.log(slideId);
 }
 
@@ -315,11 +317,17 @@ if (currentLocation === '/share-1.html' || '/share-2.html' || '/share-3.html' ||
     });
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function (event) {
     var buttons = document.querySelectorAll(".social_share");
+
     for (var i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener('click', function() {
-            return JSShare.go(this);
+        buttons[i].addEventListener('click', function () {
+            if ($('#email').val().length > 0) {
+                return JSShare.go(this);
+            }
+            else {
+                alert('Заполните все поля')
+            }
         }, false);
     }
 });
