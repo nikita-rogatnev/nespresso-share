@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function () {
-            if ($('#email').val().length > 0) {
+            if ($('#name', '#tel', '#email').val().length > 0) {
                 return JSShare.go(this);
             }
             else {
