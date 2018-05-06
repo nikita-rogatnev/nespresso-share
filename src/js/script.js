@@ -285,7 +285,7 @@ $(document).ready(function () {
     $(".form button").click(function (e) {
         e.preventDefault();
 
-        if ($('#email').val().length > 0) {
+        if ($('#name').val().length > 0 && $('#tel').val().length > 0 && $('#email').val().length > 0) {
             $(".form").addClass('is-hidden');
             $(".final").removeClass('is-hidden');
         }
@@ -322,7 +322,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function () {
-            if ($('#name', '#tel', '#email').val().length > 0) {
+
+            if ($('#name').val().length > 0 && $('#tel').val().length > 0 && $('#email').val().length > 0) {
                 return JSShare.go(this);
             }
             else {
