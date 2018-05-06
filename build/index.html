@@ -21,35 +21,6 @@
     <meta property="og:image" content="http://drib.tech/fbsharetest/quiz_landing.jpg">
     <!-- OG END -->
 
-    <!-- SOCIAL SHARE -->
-    <script type="text/javascript" src="//vk.com/js/api/openapi.js?113"></script>
-    <script type="text/javascript">
-        VK.init({apiId: 127607773, onlyWidgets: true});
-    </script>
-    <script>
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId: '124285848214697',
-                autoLogAppEvents: true,
-                xfbml: true,
-                version: 'v2.10'
-            });
-            FB.AppEvents.logPageView();
-        };
-
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {
-                return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <!-- SOCIAL SHARE END -->
-
 </head>
 
 <body>
@@ -157,19 +128,11 @@
                     </label>
 
                     <div class="form__buttons">
-                        <div id="vk_like"></div>
-                        <script type="text/javascript">
-                            VK.Widgets.Like("vk_like", {type: "button"});
-                            VK.Observer.subscribe("widgets.like.shared", function f() {
-                                alert('Молодец!');
-                            });
-                        </script>
-
-                        <button type="submit" class="form__button" onclick="return submitAndShare();">
+                        <button type="submit" class="form__button social_share" data-type="vk" onclick="return submitAndShare();">
                             <img src="img/vk.png" class="form__submit" width="85" alt="vk">
                         </button>
 
-                        <button type="submit" class="form__button" onclick="return submitAndShare();">
+                        <button type="submit" class="form__button social_share" data-type="fb" data-fb_api_id="1234567890" onclick="return submitAndShare();">
                             <img src="img/fb.png" class="form__submit" width="85" alt="fb">
                         </button>
                     </div>
