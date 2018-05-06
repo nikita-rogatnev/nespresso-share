@@ -40,16 +40,6 @@ $(document).ready(function () {
         $(".intro").addClass('is-blur');
     });
 
-    $(".modal__close").click(function (e) {
-        e.preventDefault();
-        $('meta[property=og\\:title]').remove();
-        $('meta[property=og\\:description]').remove();
-        $('meta[property=og\\:image]').remove();
-        $(".modal, .form, .final").addClass('is-hidden');
-        $(".slider").removeClass('is-modal is-hidden');
-        $(".intro").removeClass('is-blur');
-    });
-
     $(".slider__link a").click(function (e) {
         e.preventDefault();
         $(".slider").removeClass('is-modal');
@@ -60,6 +50,13 @@ $(document).ready(function () {
         e.preventDefault();
         $(".form").addClass('is-hidden');
         $(".final").removeClass('is-hidden');
+    });
+
+    $(".modal__close").click(function (e) {
+        e.preventDefault();
+        $(".modal, .form, .final").addClass('is-hidden');
+        $(".slider").removeClass('is-modal is-hidden');
+        $(".intro").removeClass('is-blur');
     });
 });
 
