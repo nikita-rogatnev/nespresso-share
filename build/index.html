@@ -12,6 +12,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
     <!-- STYLESHEETS END -->
 
+    <!-- OG -->
+    <meta property="fb:app_id" content="614466488902185"/>
+    <meta property="og:url" content="http://drib.tech/fbsharetest/quiz.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Are you the real Star Trek geek?">
+    <meta property="og:description" content="Prove your Star Trek geekhood! Are you wise like Yoda or Jar Jar Binks?">
+    <meta property="og:image" content="http://drib.tech/fbsharetest/quiz_landing.jpg">
+    <!-- OG END -->
+
+    <!-- SOCIAL SHARE -->
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?113"></script>
+    <script type="text/javascript">
+        VK.init({apiId: 127607773, onlyWidgets: true});
+    </script>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '124285848214697',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v2.10'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- SOCIAL SHARE END -->
+
 </head>
 
 <body>
@@ -39,31 +77,31 @@
                 </a>
                 <div class="slider__wrapper">
                     <div class="slider__slides owl-carousel">
-                        <div class="slider__slide">
+                        <div class="slider__slide" id="share-1">
                             <img src="img/slide-01.png" class="intro__slide" width="376" alt="nespresso slide">
                             <h2 class="slider__title">
                                 Созерцательныый пешеход 1
                             </h2>
                         </div>
-                        <div class="slider__slide">
+                        <div class="slider__slide" id="share-2">
                             <img src="img/slide-02.png" class="intro__slide" width="376" alt="nespresso slide">
                             <h2 class="slider__title">
                                 Созерцательныый пешеход 2
                             </h2>
                         </div>
-                        <div class="slider__slide">
+                        <div class="slider__slide" id="share-3">
                             <img src="img/slide-03.png" class="intro__slide" width="376" alt="nespresso slide">
                             <h2 class="slider__title">
                                 Созерцательныый пешеход 3
                             </h2>
                         </div>
-                        <div class="slider__slide">
+                        <div class="slider__slide" id="share-4">
                             <img src="img/slide-01.png" class="intro__slide" width="376" alt="nespresso slide">
                             <h2 class="slider__title">
                                 Созерцательныый пешеход 4
                             </h2>
                         </div>
-                        <div class="slider__slide">
+                        <div class="slider__slide" id="share-5">
                             <img src="img/slide-02.png" class="intro__slide" width="376" alt="nespresso slide">
                             <h2 class="slider__title">
                                 Созерцательныый пешеход 5
@@ -100,11 +138,11 @@
             <a class="modal__close">Закрыть</a>
 
             <!-- FORM BLOCK -->
-            <section class="form is-hidden" id="form">
+            <section class="form is-hidden">
                 <h1 class="form__heading">
                     Поделись в свой соцсети<br>и учавствуй в конкусе!
                 </h1>
-                <form action="#">
+                <form action="#" id="form" method="post">
                     <label>
                         <span>Имя:</span>
                         <input type="text" id="name" name="name" placeholder="Ваше имя">
@@ -119,12 +157,20 @@
                     </label>
 
                     <div class="form__buttons">
-                        <button type="submit" class="form__button">
+                        <div id="vk_like"></div>
+                        <script type="text/javascript">
+                            VK.Widgets.Like("vk_like", {type: "button"});
+                            VK.Observer.subscribe("widgets.like.shared", function f() {
+                                alert('Молодец!');
+                            });
+                        </script>
+
+                        <button type="submit" class="form__button" onclick="return submitAndShare();">
                             <img src="img/vk.png" class="form__submit" width="85" alt="vk">
                         </button>
 
-                        <button type="submit" class="form__button">
-                            <img src="img/fb.png" class="form__submit" width="85" alt="vk">
+                        <button type="submit" class="form__button" onclick="return submitAndShare();">
+                            <img src="img/fb.png" class="form__submit" width="85" alt="fb">
                         </button>
                     </div>
 

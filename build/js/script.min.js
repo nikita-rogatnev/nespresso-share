@@ -45,6 +45,7 @@ $(document).ready(function () {
         $(".modal, .form, .final").addClass('is-hidden');
         $(".slider").removeClass('is-modal is-hidden');
         $(".intro").removeClass('is-blur');
+        $('input:radio[name=image]').attr('checked', false);
     });
 
     $(".slider__link a").click(function (e) {
@@ -58,5 +59,98 @@ $(document).ready(function () {
         $(".form").addClass('is-hidden');
         $(".final").removeClass('is-hidden');
     });
-
 });
+
+function submitAndShare() {
+    // get the selected answer
+    var userName = $('#name').val();
+    var slideId = $('.center .slider__slide').attr('id');
+    var slideText = $('.center .slider__title').html();
+
+
+    var title = '';
+    var description = '';
+    var image = '';
+
+    switch (slideId) {
+        case 'share-1':
+            title = userName + slideText;
+            description = 'some text 1';
+            image = 'http://drib.tech/fbsharetest/quiz_yoda.jpg';
+            break;
+
+        case 'share-2':
+            title = userName + ' is wise like Yoda!';
+            description = 'some text 2';
+            image = 'http://drib.tech/fbsharetest/quiz_yoda.jpg';
+            break;
+
+        case 'share-3':
+            title = userName + ' is wise like Yoda!';
+            description = 'some text 3';
+            image = 'http://drib.tech/fbsharetest/quiz_yoda.jpg';
+            break;
+
+        case 'share-4':
+            title = userName + ' is wise like Yoda!';
+            description = 'some text 4';
+            image = 'http://drib.tech/fbsharetest/quiz_yoda.jpg';
+            break;
+
+        case 'share-5':
+            title = userName + ' is wise like Yoda!';
+            description = 'some text 5';
+            image = 'http://drib.tech/fbsharetest/quiz_yoda.jpg';
+            break;
+    }
+
+    // and finally share it
+
+    shareOverrideOGMeta(window.location.href,
+        title,
+        description,
+        image);
+
+    return false;
+}
+
+function shareOverrideOGMeta(overrideLink, overrideTitle, overrideDescription, overrideImage) {
+    FB.ui({
+            method: 'share_open_graph',
+            action_type: 'og.shares',
+            action_properties: JSON.stringify({
+                object: {
+                    'og:url': overrideLink,
+                    'og:title': overrideTitle,
+                    'og:description': overrideDescription,
+                    'og:image': overrideImage
+                }
+            })
+        },
+
+        function (response) {
+            // Action after response
+        });
+
+    document.write(VK.Share.button({
+        url: overrideLink,
+        title: overrideTitle,
+        image: overrideImage,
+        noparse: true
+    }));
+
+    console.log(overrideLink, overrideTitle, overrideDescription, overrideImage);
+}
+
+
+function shareOriginal() {
+    FB.ui({
+            method: 'share',
+            href: window.location.href
+        },
+        function (response) {
+            // Action after response
+        });
+
+    return false;
+}

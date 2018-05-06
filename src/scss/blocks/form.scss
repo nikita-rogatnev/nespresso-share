@@ -42,6 +42,10 @@
         padding: 1.7rem 2rem;
     }
 
+    &__radio {
+        display: none;
+    }
+
     &__buttons {
         display: flex;
         justify-content: center;

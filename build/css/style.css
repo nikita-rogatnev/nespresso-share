@@ -336,6 +336,8 @@ a {
     font-size: 4rem;
     font-weight: 300;
     padding: 1.7rem 2rem; }
+  .form__radio {
+    display: none; }
   .form__buttons {
     display: -webkit-box;
     display: -ms-flexbox;
