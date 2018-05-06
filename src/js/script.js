@@ -307,15 +307,6 @@ function submitAndShare() {
     console.log(slideId);
 }
 
-var currentLocation = window.location.pathname;
-
-if (currentLocation === '/share-1.html' || '/share-2.html' || '/share-3.html' || '/share-4.html' || '/share-5.html') {
-    console.log(currentLocation);
-
-    $(".modal__close").click(function (e) {
-        window.location = this.href;
-    });
-}
 
 document.addEventListener("DOMContentLoaded", function (event) {
     var buttons = document.querySelectorAll(".social_share");
