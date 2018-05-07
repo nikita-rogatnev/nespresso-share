@@ -52,8 +52,28 @@
         font-weight: $light-font-weight;
     }
 
-    &__radio {
-        display: none;
+    &__checkbox {
+        input {
+            margin: 0 0.5rem 0 0;
+            width: auto;
+            height: auto;
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0;
+        }
+
+        label {
+            font-weight: $regular-font-weight;
+            margin: 0;
+            transform: none;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        a {
+            font-weight: $bold-font-weight;
+            color: $color-primary-text-dark;
+        }
     }
 
     &__buttons {
@@ -91,6 +111,15 @@
                 width: 14rem;
                 margin-bottom: 0;
                 padding-right: 3rem;
+            }
+        }
+
+        &__checkbox {
+            label {
+                margin: 0;
+                transform: none;
+                display: inline-block;
+                vertical-align: middle;
             }
         }
     }
