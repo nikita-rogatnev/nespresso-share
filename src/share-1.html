@@ -131,28 +131,32 @@
                 <h1 class="form__heading">
                     Поделись в соцсетях выбранной фотографией<br>и участвуй в конкусе!
                 </h1>
-                <form action="#" id="form" method="post">
+                <form id="form" method="post">
                     <label>
                         <span>Имя:</span>
-                        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                        <input type="text" id="name" name="name" placeholder="Ваше имя"
+                               data-validetta="required,minLength[3]">
                     </label>
                     <label>
                         <span>Телефон:</span>
-                        <input type="email" id="tel" name="tel" placeholder="Ваш телефон" required>
+                        <input type="number" id="tel" name="tel" placeholder="Ваш телефон"
+                               data-validetta="required,minLength[5],number">
                     </label>
                     <label>
                         <span>Email:</span>
-                        <input type="email" id="email" name="email" placeholder="Ваш email" required>
+                        <input type="email" id="email" name="email" placeholder="Ваш email"
+                               data-validetta="required,email">
                     </label>
 
                     <div class="form__checkbox">
-                        <input type="checkbox" id="checkbox">
-                        <label for="checkbox">Согласен с <a href="#">пользовательским соглашением</a></label>
+                        <label for="checkbox">
+                            <input type="checkbox" id="checkbox" name="checkbox" data-validetta="required">
+                            Согласен с <a href="#">пользовательским соглашением</a>
+                        </label>
                     </div>
 
                     <div class="form__buttons">
-                        <button type="submit" class="form__button social_share" data-type="vk"
-                                onclick="return submitAndShare();">
+                        <button type="submit" class="form__button social_share" data-type="vk" onclick="return submitAndShare();">
                             <img src="img/vk.png" class="form__submit" width="85" alt="vk">
                         </button>
 
