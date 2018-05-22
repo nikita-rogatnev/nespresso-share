@@ -2,10 +2,11 @@
 /* ABOUT BLOCK
 /* ------------------------------------------ */
 .about {
-    @include headings;
-
     display: flex;
     flex-direction: column;
+
+    @include headings;
+
     align-items: center;
 
     &__headings {
@@ -17,11 +18,13 @@
     }
 
     &__list {
+        position: relative;
         margin-top: 2rem;
     }
 
     li {
         display: flex;
+
         align-items: center;
         justify-content: space-between;
 
@@ -32,24 +35,28 @@
 
     span {
         display: flex;
+
         width: 5.5rem;
-        justify-content: center;
-        align-items: center;
         min-width: 8.5rem;
         height: 8.5rem;
-        background: $color-accent;
+        margin-right: 1.5rem;
+
         color: $color-primary-text-light;
         border-radius: 50%;
-        margin-right: 1.5rem;
+        background: $color-accent;
+
         font-size: 5rem;
-        line-height: 1;
         font-weight: $light-font-weight;
+        line-height: 1;
+
+        justify-content: center;
+        align-items: center;
     }
 
     p {
         font-size: 2.5rem;
-        line-height: 2.6rem;
         font-weight: $light-font-weight;
+        line-height: 2.6rem;
     }
 
     @media (min-width: $large-up) {
@@ -72,6 +79,21 @@
         &__list {
             width: 50%;
             margin: 0;
+        }
+    }
+
+    @media (min-width: $large-up) {
+        &__list {
+            &:before {
+                position: absolute;
+                content: '';
+                background: url("../img/dots.png") repeat-y center center;
+                background-size: contain;
+                top: 10rem;
+                left: 4rem;
+                width: 0.4rem;
+                height: 5rem;
+            }
         }
     }
 }

@@ -2,10 +2,10 @@
 /* PRESENTS BLOCK
 /* ------------------------------------------ */
 .presents {
-    @include headings;
-
     display: flex;
     flex-direction: column;
+
+    @include headings;
     align-items: center;
 
     &__headings {
@@ -15,15 +15,18 @@
     &__list {
         margin: 2.5rem 0;
         padding-left: 2.5rem;
+
         list-style-type: disc;
+
         font-size: 2.4rem;
         line-height: 2.6rem;
     }
 
     &__img {
+        max-width: 60rem;
+
         font-size: 0;
         line-height: 0;
-        max-width: 60rem;
     }
 
     @media (min-width: $large-up) {

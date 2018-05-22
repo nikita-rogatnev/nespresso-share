@@ -2,10 +2,10 @@
 /* FINAL BLOCK
 /* ------------------------------------------ */
 .final {
-    @include headings;
-
     position: relative;
     z-index: 3;
+
+    @include headings;
 
     &__subheading {
         max-width: 56rem;

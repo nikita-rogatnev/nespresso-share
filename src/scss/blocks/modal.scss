@@ -2,15 +2,14 @@
 /* MODAL BLOCK
 /* ------------------------------------------ */
 .modal {
-    @include wrapper;
-    @include headings;
-
     position: absolute;
     top: 0;
 
     width: 100%;
     height: 100%;
 
+    @include wrapper;
+    @include headings;
     justify-content: flex-start;
 
     &__close {

@@ -2,9 +2,9 @@
 /* INTRO BLOCK
 /* ------------------------------------------ */
 .intro {
+    background: url("../img/background.png") no-repeat center center;
+    background-size: contain;
+
     @include wrapper;
     @include headings;
-
-    background: url("../img/bg.png") no-repeat center bottom;
-    background-size: contain;
 }
