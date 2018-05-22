@@ -25,30 +25,27 @@
 }
 
 @mixin headings {
-    text-align: center;
-
     &__heading {
         width: 100%;
-        padding: 1rem 0;
 
-        text-align: center;
+        color: $color-accent;
 
-        color: $color-primary-text-dark;
-
-        font-size: 2.5rem;
-        line-height: 1.2;
+        font-size: $font-size-03;
+        line-height: 1;
 
         @media (min-width: $large-up) {
-            font-size: 5rem;
+            font-size: 7.4rem;
+            line-height: 7rem;
         }
     }
 
     &__subheading {
-        font-size: $font-size--1;
-        font-weight: $bold-font-weight;
+        font-size: $font-size-02;
+        line-height: 1;
 
         @media (min-width: $large-up) {
-            font-size: $font-size-01;
+            font-size: 4rem;
+            line-height: 7rem;
         }
     }
 }

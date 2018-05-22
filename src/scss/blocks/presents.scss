@@ -1,0 +1,45 @@
+/* ------------------------------------------ */
+/* PRESENTS BLOCK
+/* ------------------------------------------ */
+.presents {
+    @include headings;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__headings {
+        width: 100%;
+    }
+
+    &__list {
+        margin: 2.5rem 0;
+        padding-left: 2.5rem;
+        list-style-type: disc;
+        font-size: 2.4rem;
+        line-height: 2.6rem;
+    }
+
+    &__img {
+        font-size: 0;
+        line-height: 0;
+        max-width: 60rem;
+    }
+
+    @media (min-width: $large-up) {
+        flex-direction: row;
+
+        &__headings {
+            width: 55%;
+        }
+
+        &__list {
+            margin: 4.5rem 0 0;
+        }
+
+        &__img {
+            width: 45%;
+            max-width: none;
+        }
+    }
+}

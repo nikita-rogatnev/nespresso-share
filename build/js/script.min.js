@@ -491,16 +491,6 @@ $(document).ready(function () {
 
     $(".intro .slider__slide").click(function (e) {
         e.preventDefault();
-        $(".modal").removeClass('is-hidden');
-        $(".slider").addClass('is-modal');
-        $(".intro").addClass('is-blur');
-    });
-
-    $(".slider__link a").click(function (e) {
-        e.preventDefault();
-        $(".slider").removeClass('is-modal');
-        $(".form").removeClass('is-hidden');
-
         var slideId = $('.center .slider__slide').attr('id');
         $(location).attr('href', slideId + '.html');
     });

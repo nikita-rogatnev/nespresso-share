@@ -66,17 +66,19 @@ $base-font-family: 'NespressoLucas', Arial, sans-serif;
 $secondary-font-family: $base-font-family;
 
 // COLORS
-$color-accent: rgba(237, 212, 182, 1);
+$color-accent: rgba(246, 94, 41, 1);
 $color-accent-dark: $color-accent;
 $color-accent-light: $color-accent;
+
 $color-primary: rgba(0, 0, 0, 1);
 $color-primary-dark: rgba(59, 59, 59, 1);
 $color-primary-light: $color-primary;
+$color-primary-text-dark: rgba(0, 0, 0, 1);
+$color-primary-text-light: rgba(255, 255, 255, 1);
+
 $color-secondary: rgba(221, 157, 74, 1);
 $color-secondary-dark: $color-secondary;
 $color-secondary-light: $color-secondary;
-$color-primary-text-dark: rgba(0, 0, 0, 1);
-$color-primary-text-light: rgba(255, 255, 255, 1);
 
 // TRANSITIONS
 $transition: 0.3s;
