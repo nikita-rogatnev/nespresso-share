@@ -474,19 +474,18 @@ $(document).ready(function () {
         $(".slider .slider__slide--active:not(:last-child)").removeClass('slider__slide--active').next().addClass("slider__slide--active");
     });
 
-
-    $(".slider .slider__slidesss").click(function (e) {
+    $(".slider .slider__description-links").click(function (e) {
         e.preventDefault();
 
-        var slideId = $('.center .slider__slide').attr('id');
+        let slideId = $(this).parent().parent().attr('id');
+        console.log(slideId);
         $(location).attr('href', slideId + '.html');
     });
 
     $(".modal__close").click(function (e) {
         e.preventDefault();
         $(".modal, .form, .final").addClass('is-hidden');
-        $(".slider").removeClass('is-modal is-hidden');
-        $(".intro").removeClass('is-blur');
+        $(".slider, .intro").removeClass('is-modal is-hidden');
     });
 });
 
@@ -512,15 +511,15 @@ function submitAndShare() {
         }
     });
 
-    var userName = $('#name').val();
-    var slideId = window.location.pathname.replace(".html", "");
+    let userName = $('#name').val();
+    let slideId = window.location.pathname.replace(".html", "");
     slideId = slideId.replace("/", "");
     console.log(slideId);
 
     if ($('#form').validetta(true)) {
-        var buttons = document.querySelectorAll(".social_share");
+        let buttons = document.querySelectorAll(".social_share");
 
-        for (var i = 0; i < buttons.length; i++) {
+        for (let i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener('click', function () {
                 return JSShare.go(this);
             }, false);

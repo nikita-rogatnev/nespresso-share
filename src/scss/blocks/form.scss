@@ -7,13 +7,25 @@
 
     @include headings;
 
+    &__heading {
+        font-size: 4.6rem;
+        line-height: 5rem;
+        margin-bottom: 5rem;
+    }
+
     form {
         display: flex;
         flex-direction: column;
 
         max-width: 60rem;
         margin: 0 auto;
-        padding-top: 6rem;
+        padding-top: 3rem;
+    }
+
+    &__note {
+        font-weight: $bold-font-weight;
+        font-size: $font-size--1;
+        line-height: 1rem;
     }
 
     label {
@@ -53,26 +65,64 @@
     }
 
     &__checkbox {
+        text-align: center;
+
         input {
-            display: inline-block;
+            display: none;
 
-            width: auto;
-            height: auto;
-            margin: 0 0.5rem 0 0;
-            padding: 0;
-
-            vertical-align: middle;
+            &:checked ~ label {
+                &::after {
+                    display: block;
+                    content: '';
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    background: $color-primary-text-dark;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0.75rem;
+                    position: absolute;
+                }
+            }
         }
 
         label {
             display: inline-block;
-
+            width: 100%;
+            max-width: 38rem;
             margin: 0;
-
+            position: relative;
             transform: none;
             vertical-align: middle;
 
             font-weight: $regular-font-weight;
+
+            span {
+                width: calc(100% - 4rem);
+                padding: 0;
+                display: inline-block;
+                text-align: left;
+                vertical-align: middle;
+                font-weight: $bold-font-weight;
+                font-size: $font-size--1;
+                line-height: 1.4;
+            }
+
+            a {
+                text-decoration: underline;
+            }
+
+            &::before {
+                display: inline-block;
+                content: '';
+                width: 3rem;
+                height: 3rem;
+                margin: 0 0.5rem 0 0;
+                padding: 0;
+                background: $color-primary-text-light;
+                outline: 0.1rem solid lightgrey;
+
+                vertical-align: middle;
+            }
         }
 
         a {
@@ -121,13 +171,28 @@
         }
 
         &__checkbox {
+            text-align: left;
+            display: flex;
+            justify-content: center;
+            max-width: 38rem;
+            margin-left: 11rem;
+
             label {
                 display: inline-block;
+                max-width: none;
 
                 margin: 0;
 
                 transform: none;
                 vertical-align: middle;
+
+                span {
+                    width: calc(100% - 4rem);
+                    padding: 0;
+                    display: inline-block;
+                    text-align: left;
+                    vertical-align: middle;
+                }
             }
         }
     }

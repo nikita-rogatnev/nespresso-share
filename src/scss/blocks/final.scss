@@ -7,12 +7,14 @@
 
     @include headings;
 
+    &__heading,
     &__subheading {
-        max-width: 56rem;
         margin: 2rem auto 7rem;
-
-        font-size: $font-size--1;
+        max-width: 70rem;
+        font-size: 5rem;
         font-weight: $light-font-weight;
+        line-height: 1;
+        color: $color-accent;
     }
 
     &__image {
@@ -21,6 +23,14 @@
     }
 
     @media (min-width: $large-up) {
-        font-size: 2.2rem;
+        &__heading,
+        &__subheading {
+            margin: 2rem auto 7rem;
+
+            font-size: 5rem;
+            font-weight: $light-font-weight;
+            line-height: 1;
+            color: $color-accent;
+        }
     }
 }

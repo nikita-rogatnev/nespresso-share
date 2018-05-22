@@ -227,6 +227,7 @@ a {
   top: 0;
   width: 100%;
   height: 100%;
+  text-align: center;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -278,8 +279,8 @@ a {
     height: 100%;
     content: "";
     opacity: 0.95;
-    background: #f65e29 url("../img/bg.png") no-repeat center bottom;
-    background-size: contain;
+    background: url("../img/bg.png") no-repeat center top;
+    background-size: cover;
     -webkit-filter: blur(1rem);
             filter: blur(1rem); }
 
@@ -403,6 +404,10 @@ a {
   .form__subheading {
     font-size: 2.5rem;
     line-height: 1; }
+  .form__heading {
+    font-size: 4.6rem;
+    line-height: 5rem;
+    margin-bottom: 5rem; }
   .form form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -413,7 +418,11 @@ a {
             flex-direction: column;
     max-width: 60rem;
     margin: 0 auto;
-    padding-top: 6rem; }
+    padding-top: 3rem; }
+  .form__note {
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1rem; }
   .form label {
     position: relative;
     display: -webkit-box;
@@ -446,23 +455,55 @@ a {
     font-family: "NespressoLucas", Arial, sans-serif;
     font-size: 4rem;
     font-weight: 300; }
-  .form__checkbox input {
-    display: inline-block;
-    width: auto;
-    height: auto;
-    margin: 0 0.5rem 0 0;
-    padding: 0;
-    vertical-align: middle; }
-  .form__checkbox label {
-    display: inline-block;
-    margin: 0;
-    -webkit-transform: none;
-            transform: none;
-    vertical-align: middle;
-    font-weight: 400; }
-  .form__checkbox a {
-    color: black;
-    font-weight: 700; }
+  .form__checkbox {
+    text-align: center; }
+    .form__checkbox input {
+      display: none; }
+      .form__checkbox input:checked ~ label::after {
+        display: block;
+        content: '';
+        width: 1.5rem;
+        height: 1.5rem;
+        background: black;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        left: 0.75rem;
+        position: absolute; }
+    .form__checkbox label {
+      display: inline-block;
+      width: 100%;
+      max-width: 38rem;
+      margin: 0;
+      position: relative;
+      -webkit-transform: none;
+              transform: none;
+      vertical-align: middle;
+      font-weight: 400; }
+      .form__checkbox label span {
+        width: calc(100% - 4rem);
+        padding: 0;
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 1.4; }
+      .form__checkbox label a {
+        text-decoration: underline; }
+      .form__checkbox label::before {
+        display: inline-block;
+        content: '';
+        width: 3rem;
+        height: 3rem;
+        margin: 0 0.5rem 0 0;
+        padding: 0;
+        background: white;
+        outline: 0.1rem solid lightgrey;
+        vertical-align: middle; }
+    .form__checkbox a {
+      color: black;
+      font-weight: 700; }
   .form__buttons {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -531,11 +572,13 @@ a {
   .final__subheading {
     font-size: 2.5rem;
     line-height: 1; }
-  .final__subheading {
-    max-width: 56rem;
+  .final__heading, .final__subheading {
     margin: 2rem auto 7rem;
-    font-size: 1.6rem;
-    font-weight: 300; }
+    max-width: 70rem;
+    font-size: 5rem;
+    font-weight: 300;
+    line-height: 1;
+    color: #f65e29; }
   .final__image {
     max-width: 27rem;
     margin: 0 auto; }
@@ -655,19 +698,40 @@ a {
         width: 14rem;
         margin-bottom: 0;
         padding-right: 3rem; }
-    .form__checkbox label {
-      display: inline-block;
-      margin: 0;
-      -webkit-transform: none;
-              transform: none;
-      vertical-align: middle; }
+    .form__checkbox {
+      text-align: left;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      max-width: 38rem;
+      margin-left: 11rem; }
+      .form__checkbox label {
+        display: inline-block;
+        max-width: none;
+        margin: 0;
+        -webkit-transform: none;
+                transform: none;
+        vertical-align: middle; }
+        .form__checkbox label span {
+          width: calc(100% - 4rem);
+          padding: 0;
+          display: inline-block;
+          text-align: left;
+          vertical-align: middle; }
       .final__heading {
         font-size: 7.4rem;
         line-height: 7rem; }
       .final__subheading {
         font-size: 4rem;
         line-height: 7rem; }
-    .final {
-      font-size: 2.2rem; } }
+    .final__heading, .final__subheading {
+      margin: 2rem auto 7rem;
+      font-size: 5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: #f65e29; } }
 
 /*# sourceMappingURL=style.css.map */
