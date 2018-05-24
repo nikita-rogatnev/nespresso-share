@@ -14,12 +14,13 @@
 
     <!-- OG -->
     <meta property="fb:app_id" content="614466488902185"/>
-    <meta property="og:url" content="http://drib.tech/fbsharetest/quiz.html">
+    <meta property="og:url" content="#">
     <meta property="og:type" content="article">
 
-    <meta name="og:title" content=" Созерцательныый пешеход 1">
-    <meta name="og:description" content="some text 1">
-    <meta name="og:image" content="http://drib.tech/fbsharetest/quiz_yoda.jpg">
+    <meta name="og:title" content="Человек-органайзер">
+    <meta name="og:description"
+          content="Обладаю талантом в любом месте устроить филиал своего дома. Отправьте меня в космос и первое, что услышат пришельцы, будет - хотите немного кофе?">
+    <meta name="og:image" content="img/slide-02.png">
     <!-- OG END -->
 
 </head>
@@ -217,36 +218,43 @@
             <!-- FORM BLOCK -->
             <section class="form">
                 <h1 class="form__heading">
-                    Поделись в соцсетях выбранной фотографией<br>и участвуй в конкусе!
+                    Поделиться в социальной сети<br>и учавствовать в конкурсе
                 </h1>
-                <form action="#" id="form" method="post">
+
+                <span class="form__note">*Обязательные поля</span>
+
+                <form id="form" method="post">
                     <label>
-                        <span>Имя:</span>
-                        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                        <span>*Имя:</span>
+                        <input type="text" id="name" name="name" placeholder="Ваше имя"
+                               data-validetta="required,minLength[3]">
+                    </label>
+                    <label>
+                        <span>*Email:</span>
+                        <input type="email" id="email" name="email" placeholder="Ваш email"
+                               data-validetta="required,email">
                     </label>
                     <label>
                         <span>Телефон:</span>
-                        <input type="email" id="tel" name="tel" placeholder="Ваш телефон" required>
-                    </label>
-                    <label>
-                        <span>Email:</span>
-                        <input type="email" id="email" name="email" placeholder="Ваш email" required>
+                        <input type="number" id="tel" name="tel" placeholder="Ваш телефон">
                     </label>
 
                     <div class="form__checkbox">
-                        <input type="checkbox" id="checkbox">
-                        <label for="checkbox">Согласен с <a href="#">пользовательским соглашением</a></label>
+                        <input type="checkbox" id="checkbox" name="checkbox" data-validetta="required">
+                        <label for="checkbox">
+                            <span>Согласен с условиями <a href="#">пользовательского<br>соглашения</a></span>
+                        </label>
                     </div>
 
                     <div class="form__buttons">
                         <button type="submit" class="form__button social_share" data-type="vk"
                                 onclick="return submitAndShare();">
-                            <img src="img/vk.png" class="form__submit" width="85" alt="vk">
+                            <img src="img/vk.png" class="form__submit" width="84" alt="vk">
                         </button>
 
                         <button type="submit" class="form__button social_share" data-type="fb"
                                 data-fb_api_id="379599659224510" onclick="return submitAndShare();">
-                            <img src="img/fb.png" class="form__submit" width="85" alt="fb">
+                            <img src="img/fb.png" class="form__submit" width="84" alt="fb">
                         </button>
                     </div>
 
@@ -260,9 +268,7 @@
                     Спасибо за участие!
                 </h1>
                 <h2 class="final__subheading">
-                    Ваше кофейное путешествие началось.<br>
-                    Итоги розыгрыша &mdash; 5 июня, не забудьте проверить почту, ведь победителем можете стать именно
-                    вы!
+                    Итоги розыгрыша &mdash; 15 июня, не забудьпроверить почту.
                 </h2>
                 <div class="final__image">
                     <img src="img/cup.png" width="257" alt="cup">
