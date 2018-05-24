@@ -457,28 +457,23 @@ JSShare = {
 $(document).ready(function () {
     $(".slider .slider__slide").click(function (e) {
         e.preventDefault();
-
         $(".slider .slider__slide").removeClass('slider__slide--active');
         $(this).addClass('slider__slide--active');
     });
 
     $(".slider__button--left").click(function (e) {
         e.preventDefault();
-
         $(".slider .slider__slide--active:not(:first-child)").removeClass('slider__slide--active').prev().addClass("slider__slide--active");
     });
 
     $(".slider__button--right").click(function (e) {
         e.preventDefault();
-
         $(".slider .slider__slide--active:not(:last-child)").removeClass('slider__slide--active').next().addClass("slider__slide--active");
     });
 
     $(".slider .slider__description-links").click(function (e) {
         e.preventDefault();
-
         let slideId = $(this).parent().parent().attr('id');
-        console.log(slideId);
         $(location).attr('href', slideId + '.html');
     });
 
@@ -487,42 +482,32 @@ $(document).ready(function () {
         $(".modal, .form, .final").addClass('is-hidden');
         $(".slider, .intro").removeClass('is-modal is-hidden');
     });
-});
 
-function submitAndShare() {
-    $('#form').validetta({
-        showErrorMessages: true,
-        display: 'bubble',
-        errorTemplateClass: 'validetta-bubble',
-        realTime: true,
-        bubblePosition: 'right',
-        bubbleGapLeft: 15,
-        bubbleGapTop: 0,
-        onValid: function (event) {
-            event.preventDefault();
+    let buttons = document.querySelectorAll(".social_share");
 
-            $(".form").addClass('is-hidden');
-            $(".final").removeClass('is-hidden');
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+            $("#form").validetta({
+                showErrorMessages: true,
+                display: 'bubble',
+                errorTemplateClass: 'validetta-bubble',
+                realTime: true,
+                bubblePosition: 'right',
+                bubbleGapLeft: 15,
+                bubbleGapTop: 0,
+                onValid: function (event) {
+                    event.preventDefault();
 
-            return true;
-        },
-        onError: function (event) {
-            event.preventDefault();
-        }
-    });
+                    $(".form").addClass('is-hidden');
+                    $(".final").removeClass('is-hidden');
+                    
+                    return JSShare.go(buttons[i]);
+                },
+                onError: function (event) {
+                    event.preventDefault();
+                }
+            });
 
-    let userName = $('#name').val();
-    let slideId = window.location.pathname.replace(".html", "");
-    slideId = slideId.replace("/", "");
-    console.log(slideId);
-
-    if ($('#form').validetta(true)) {
-        let buttons = document.querySelectorAll(".social_share");
-
-        for (let i = 0; i < buttons.length; i++) {
-            buttons[i].addEventListener('click', function () {
-                return JSShare.go(this);
-            }, false);
-        }
+        }, false);
     }
-}
+});

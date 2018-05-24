@@ -223,7 +223,7 @@
 
                 <span class="form__note">*Обязательные поля</span>
 
-                <form id="form" method="post">
+                <form id="form" method="post" action="#">
                     <label>
                         <span>*Имя:</span>
                         <input type="text" id="name" name="name" placeholder="Ваше имя"
@@ -247,13 +247,12 @@
                     </div>
 
                     <div class="form__buttons">
-                        <button type="submit" class="form__button social_share" data-type="vk"
-                                onclick="return submitAndShare();">
+                        <button type="submit" class="form__button social_share" data-type="vk">
                             <img src="img/vk.png" class="form__submit" width="84" alt="vk">
                         </button>
 
                         <button type="submit" class="form__button social_share" data-type="fb"
-                                data-fb_api_id="379599659224510" onclick="return submitAndShare();">
+                                data-fb_api_id="379599659224510">
                             <img src="img/fb.png" class="form__submit" width="84" alt="fb">
                         </button>
                     </div>
