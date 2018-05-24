@@ -71,10 +71,12 @@
 
         font-size: 0;
         line-height: 0;
+        filter: brightness(0.5);
 
         &--active {
             width: 100%;
             order: -1;
+            filter: none;
 
             .slider__description {
                 display: flex;

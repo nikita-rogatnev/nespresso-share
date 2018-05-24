@@ -355,12 +355,16 @@ a {
     width: 25%;
     padding: 0.5rem;
     font-size: 0;
-    line-height: 0; }
+    line-height: 0;
+    -webkit-filter: brightness(0.5);
+            filter: brightness(0.5); }
     .slider__slide--active {
       width: 100%;
       -webkit-box-ordinal-group: 0;
           -ms-flex-order: -1;
-              order: -1; }
+              order: -1;
+      -webkit-filter: none;
+              filter: none; }
       .slider__slide--active .slider__description {
         display: -webkit-box;
         display: -ms-flexbox;
