@@ -500,7 +500,7 @@ $(document).ready(function () {
 
                     $(".form").addClass('is-hidden');
                     $(".final").removeClass('is-hidden');
-                    
+
                     return JSShare.go(buttons[i]);
                 },
                 onError: function (event) {
