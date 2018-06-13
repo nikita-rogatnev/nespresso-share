@@ -24,13 +24,10 @@
             creditCard: "Invalid credit card number. Please be sure to check."
         }, h = {
             showErrorMessages: !0,
-            display: "bubble",
             errorTemplateClass: "validetta-bubble",
             errorClass: "validetta-error",
             validClass: "validetta-valid",
-            bubblePosition: "right",
-            bubbleGapLeft: 15,
-            bubbleGapTop: 0,
+            display: 'inline',
             realTime: !1,
             onValid: function () {
             },
@@ -489,11 +486,11 @@ $(document).ready(function () {
         buttons[i].addEventListener('click', function () {
             $("#form").validetta({
                 showErrorMessages: true,
-                display: 'bubble',
-                errorTemplateClass: 'validetta-bubble',
+                display: 'inline',
+                errorTemplateClass: 'validetta-inline',
                 realTime: true,
-                bubblePosition: 'right',
                 bubbleGapLeft: 15,
+                bubblePosition: "center",
                 bubbleGapTop: 0,
                 onValid: function (event) {
                     event.preventDefault();

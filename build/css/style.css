@@ -560,7 +560,12 @@ a {
   font: 12px/14px Arial, Helvetica, sans-serif; }
 
 .validetta-inline {
-  color: #cd2e26; }
+  color: #cd2e26;
+  text-align: center !important;
+  margin-top: 1rem !important;
+  display: block !important;
+  padding: 0 !important;
+  width: 100% !important; }
 
 /* ------------------------------------------ */
 /* FINAL BLOCK
@@ -697,7 +702,9 @@ a {
               transform: translateX(-3rem);
       -webkit-box-align: center;
           -ms-flex-align: center;
-              align-items: center; }
+              align-items: center;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
       .form label span {
         width: 14rem;
         margin-bottom: 0;
@@ -710,6 +717,8 @@ a {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
       max-width: 38rem;
       margin-left: 11rem; }
       .form__checkbox label {

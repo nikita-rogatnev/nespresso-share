@@ -163,6 +163,8 @@
 
             align-items: center;
 
+            flex-wrap: wrap;
+
             span {
                 width: 14rem;
                 margin-bottom: 0;
@@ -174,6 +176,7 @@
             text-align: left;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             max-width: 38rem;
             margin-left: 11rem;
 
@@ -247,4 +250,9 @@
 
 .validetta-inline {
     color: #cd2e26;
+    text-align: center !important;
+    margin-top: 1rem !important;
+    display: block !important;
+    padding: 0 !important;
+    width: 100% !important;
 }
